@@ -27,6 +27,9 @@ export class MovieCardComponent implements OnInit {
     this.getMovies();
   }
 
+  /**
+   * Fetches all movies from the database
+   */
   getMovies(): void {
     this.fetchMovies.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -35,6 +38,13 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens the movie details dialog
+   * @param movie - The movie object to be displayed in the dialog
+   * @returns {void}
+   * @method showMovieDetails
+   * @memberof MovieCardComponent
+   */
   showMovieDetails(movie: any): void {
     console.log(movie);
     this.dialog.open(MovieDetailsComponent, {
@@ -43,6 +53,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Navigates to the user profile page
+   * @returns {void}
+   * @method seeProfile
+   * @memberof MovieCardComponent
+   */
   seeProfile(): void {
     const userData = localStorage.getItem('user');
     if (userData) {
@@ -53,11 +69,24 @@ export class MovieCardComponent implements OnInit {
     }
   }
 
+  /**
+   * Logs the user out and redirects to the welcome page
+   * @returns {void}
+   * @method Logout
+   * @memberof MovieCardComponent
+   */
   Logout(): void {
     localStorage.clear();
     this.router.navigate(['welcome']);
   }
 
+  /**
+   * Checks if a movie is in the user's favorites
+   * @param movie 
+   * @returns {boolean}
+   * @method isFavorite
+   * @memberof MovieCardComponent
+   */
   isFavorite(movie: any): boolean {
     const userData = localStorage.getItem('user');
     if (userData) {
@@ -67,6 +96,13 @@ export class MovieCardComponent implements OnInit {
     return false;
   }
 
+  /**
+   * Adds or removes a movie from the user's favorites
+   * @param movie 
+   * @returns {void}
+   * @method toggleFavorites
+   * @memberof MovieCardComponent
+   */
   toggleFavorites(movie: any): void {
     const userData = localStorage.getItem('user');
     if (userData) {
@@ -75,24 +111,31 @@ export class MovieCardComponent implements OnInit {
       const movieId = movie._id;
 
       if (!this.isFavorite(movie)) {
-      
-      this.fetchMovies.addFavoriteMovie(userId, movieId).subscribe((updatedUser: any) => {
-        this.snackBar.open('Added to favorites!', 'OK', { duration: 2000 });
-        
-        // Update localStorage with the updated user object
-        localStorage.setItem('user', JSON.stringify(updatedUser));
-      });
-      } else {
-        this.fetchMovies.removeFavoriteMovie(userId, movieId).subscribe((updatedUser: any) => {
-          this.snackBar.open('Removed from favorites!', 'OK', { duration: 2000 });
-          
+
+        this.fetchMovies.addFavoriteMovie(userId, movieId).subscribe((updatedUser: any) => {
+          this.snackBar.open('Added to favorites!', 'OK', { duration: 2000 });
+
           // Update localStorage with the updated user object
           localStorage.setItem('user', JSON.stringify(updatedUser));
         });
+      } else {
+        this.fetchMovies.removeFavoriteMovie(userId, movieId).subscribe((updatedUser: any) => {
+          this.snackBar.open('Removed from favorites!', 'OK', { duration: 2000 });
+
+          // Update localStorage with the updated user object
+          localStorage.setItem('user', JSON.stringify(updatedUser));
+        });
+      }
     }
   }
-}
 
+  /**
+   * Opens the director details dialog
+   * @param director - The director object to be displayed in the dialog
+   * @returns {void}
+   * @method showDirectorDetails
+   * @memberof MovieCardComponent
+   */
   showDirectorDetails(director: { name: string, biography: string, birth: string, death: string }): void {
     this.dialog.open(DirectorDetailsComponent, {
       data: {
@@ -105,6 +148,13 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens the genre details dialog
+   * @param genre - The genre object to be displayed in the dialog
+   * @returns {void}
+   * @method showGenreDetails
+   * @memberof MovieCardComponent
+   */
   showGenreDetails(genre: { name: string, description: string }): void {
     this.dialog.open(GenreDetailsComponent, {
       data: {
@@ -115,6 +165,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Navigates back to the movies page
+   * @returns {void}
+   * @method goBack
+   * @memberof MovieCardComponent
+   */
   goBack(): void {
     this.router.navigate(['movies']);
   }

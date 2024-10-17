@@ -25,6 +25,13 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
+/**
+ * Defines the routes of the application
+ * @type {Routes}
+ * @constant
+ * @memberof AppModule
+ * @name appRoutes
+ */
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },

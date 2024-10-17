@@ -19,6 +19,12 @@ export class EditProfileFormComponent {
     this.userData = { ...data }; // Clone user data passed to the dialog
   }
 
+  /**
+   * Updates user data and closes the dialog
+   * @returns {void}
+   * @method onSave
+   * @memberof EditProfileFormComponent
+   */
   onSave(): void {
     const userId = this.userData._id;
 
@@ -31,6 +37,12 @@ export class EditProfileFormComponent {
     // this.dialogRef.close(this.userData); // Close the dialog and pass updated user data
   }
 
+  /**
+   * Cancels the dialog without saving
+   * @returns {void}
+   * @method onCancel
+   * @memberof EditProfileFormComponent
+   */
   onCancel(): void {
     this.dialogRef.close(false); // Close dialog without saving
   }

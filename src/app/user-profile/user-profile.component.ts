@@ -25,8 +25,12 @@ export class UserProfileComponent implements OnInit {
     this.getUserData();
     this.getFavoriteMovies();
   }
-
-  // Fetch user data on initialization
+  /**
+   * Fetches user data from local storage
+   * @returns {void}
+   * @method getUserData
+   * @memberof UserProfileComponent
+   */
   getUserData(): void {
     const userData = localStorage.getItem('user'); // Assume user ID is stored in localStorage
     if (userData) {
@@ -34,7 +38,12 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
-  // Fetch favorite movies
+  /**
+   * Fetches user's favorite movies from the database
+   * @returns {void}
+   * @method getFavoriteMovies
+   * @memberof UserProfileComponent
+   */
   getFavoriteMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((movies: any[]) => {
       if (this.user.favorites) {
@@ -45,7 +54,12 @@ export class UserProfileComponent implements OnInit {
   });
   }
 
-  // Open the edit dialog (modal)
+  /**
+   * Opens the edit profile dialog
+   * @returns {void}
+   * @method openEditProfileDialog
+   * @memberof UserProfileComponent
+   */
   openEditProfileDialog(): void {
     const dialogRef = this.dialog.open(EditProfileFormComponent, {
       width: '400px',
@@ -60,7 +74,12 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
-  // Delete user account
+  /**
+   * Deletes user account from the app
+   * @returns {void}
+   * @method deleteProfile
+   * @memberof UserProfileComponent
+   */
   deleteProfile(): void {
 
     const userId = this.user._id;
@@ -78,10 +97,22 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Navigates back to the movies view
+   * @returns {void}
+   * @method goBack
+   * @memberof UserProfileComponent
+   */
   goBack(): void {
     this.router.navigate(['movies']);
   }
 
+  /**
+   * Logs out the user and clears local storage
+   * @returns {void}
+   * @method onLogout
+   * @memberof UserProfileComponent
+   */
   Logout(): void {
     localStorage.clear();
     this.router.navigate(['welcome']);
