@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/myFlix-Angular-client/",
+    "deploy": "ng deploy --base-href=/myFlix-Angular-client/ --repo=git@github.com:lenachat/myFlix-Angular-client.git --no-silent",
     "docs": "typedoc"
   },
   "private": true,
