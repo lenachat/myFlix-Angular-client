@@ -17,6 +17,12 @@ export class EditProfileFormComponent {
     private fetchApiData: FetchApiDataService,
   ) {
     this.userData = { ...data }; // Clone user data passed to the dialog
+
+    // format birthday for the date input to 'yyyy-MM-dd'
+    if (this.userData.birthday) {
+      const birthday = new Date(this.userData.birthday);
+      this.userData.birthday = birthday.toISOString().split('T')[0];
+    }
   }
 
   /**

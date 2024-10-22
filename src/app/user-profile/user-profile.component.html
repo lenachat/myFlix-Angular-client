@@ -1,4 +1,4 @@
-<mat-toolbar color="accent">
+<mat-toolbar color="accent" class="navigation-bar">
   <span (click)="goBack()">
     <h1>MyFlix</h1>
   </span>
@@ -15,11 +15,33 @@
     <p><strong>Email:</strong> {{ user.email }}</p>
     <p><strong>Birthday:</strong> {{ user.birthday | date }}</p>
     <p><strong>Favorite Movies:</strong></p>
-    <ul>
-      <li *ngFor="let movie of favoriteMovies">
-        <p>{{ movie.title }}</p>
-      </li>
-    </ul>
+    <div fxLayout="row wrap" fxLayoutGap="16px grid" class="card-container">
+      <div fxFlex="25" fxFlex.lt-lg="33" fxFlex.lt-md="50" fxFlex.lt-sm="100" *ngFor="let movie of favoriteMovies">
+        <mat-card>
+          <mat-card-content>
+            <mat-card-header>
+              <h2 color="primary">{{movie.title}}</h2>
+            </mat-card-header>
+            <mat-card-subtitle>
+              <button mat-button (click)="showGenreDetails(movie.genre)" color="primary">{{movie.genre.name}}</button>
+            </mat-card-subtitle>
+            <mat-card-content>
+              <img class="movie-image" src={{movie.imagePath}} />
+              <button mat-button (click)="showDirectorDetails(movie.director)"
+                color="primary">{{movie.director.name}}</button>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button (click)="showMovieDetails(movie)" color="accent">See details</button>
+              <span class="spacer"></span>
+              <button mat-icon-button (click)="toggleFavorites(movie)">
+                <mat-icon color="primary" *ngIf="!isFavorite(movie)">favorite_border</mat-icon>
+                <mat-icon color="primary" *ngIf="isFavorite(movie)">favorite</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
   </div>
 
   <div class="button-group">

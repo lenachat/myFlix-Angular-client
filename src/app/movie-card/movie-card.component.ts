@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
@@ -13,6 +13,8 @@ import { GenreDetailsComponent } from '../genre-details/genre-details.component'
   styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent implements OnInit {
+
+  @Input() movie: any; // Accept the movie object as input
 
   movies: any[] = [];
 
