@@ -1,182 +1,69 @@
-<!DOCTYPE html>
-<html class="default" lang="en">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>my-flix-angular-client</title><meta name="description" content="Documentation for my-flix-angular-client"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">my-flix-angular-client</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h1>my-flix-angular-client</h1></div><div class="tsd-panel tsd-typography"><a id="md:myflix-angular-app" class="tsd-anchor"></a><h1 class="tsd-anchor-link">myFlix Angular App<a href="#md:myflix-angular-app" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>myFlix is a single-page, responsive movie app built with Angular. The app allows users to access information about different movies, directors, and genres, and to create a profile to save their favorite movies. This project serves as the client-side for the myFlix app. It interacts with an existing REST API to handle user requests (see movie_api on GitHub: <a href="https://github.com/lenachat/movie_api" target="_blank" class="external">https://github.com/lenachat/movie_api</a>).</p>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli" target="_blank" class="external">Angular CLI</a> version 16.0.0.</p>
+<a id="md:features" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Features<a href="#md:features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li><strong>User Registration &amp; Login</strong>: Users can register for an account or log in to access the app.</li>
+<li><strong>Movie List</strong>: Authenticated users can view a list of all available movies.</li>
+<li><strong>Movie Details</strong>: Upon selecting a movie, users can view detailed information about the movie, including its director and genre. Users can also add movies to their list of favorites. Users can also retrieve details of the movie's director or its genre.</li>
+<li><strong>Profile View</strong>: Users can view their user data, update their user information, or deregister from the app.</li>
+<li><strong>Responsive Design</strong>: The app is designed to work across various devices and screen sizes.</li>
+</ul>
+<a id="md:technologies-used" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Technologies Used<a href="#md:technologies-used" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li>Angular (version 9+)</li>
+<li>Angular Material for UI design</li>
+<li>REST API for backend communication</li>
+<li>TypeDoc for code documentation</li>
+<li>Node.js and npm for dependency management</li>
+</ul>
+<a id="md:key-views" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Key Views<a href="#md:key-views" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li><strong>Welcome View</strong>: Users can log in or register.</li>
+<li><strong>Movies View</strong>: Displays all movies fetched from the REST API.</li>
+<li><strong>Movie Details View</strong>: Provides more information about a selected movie.
+<ul>
+<li>Includes buttons for navigating to the <strong>Director View</strong> and <strong>Genre View</strong>.</li>
+</ul>
+</li>
+<li><strong>Profile View</strong>: Shows user's profile data, as well as list of favorite movies.</li>
+</ul>
+<a id="md:installation" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Installation<a href="#md:installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>To run this project locally, follow these steps:</p>
+<ol>
+<li>
+<p>Clone the repository:</p>
+<pre><code class="bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">clone</span><span class="hl-1"> </span><span class="hl-2">https://github.com/lenachat/myFlix-Angular-client.git</span>
+</code><button type="button">Copy</button></pre>
 
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="IE=edge" />
-  <title>my-flix-angular-client</title>
-  <meta name="description" content="Documentation for my-flix-angular-client" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <link rel="stylesheet" href="assets/highlight.css" />
-  <script defer src="assets/main.js"></script>
-  <script async src="assets/icons.js" id="tsd-icons-script"></script>
-  <script async src="assets/search.js" id="tsd-search-script"></script>
-  <script async src="assets/navigation.js" id="tsd-nav-script"></script>
-</head>
+</li>
+<li>
+<p>Navigate into the project directory:</p>
+<pre><code class="bash"><span class="hl-0">cd</span><span class="hl-1"> </span><span class="hl-2">myFlix-Angular-client</span>
+</code><button type="button">Copy</button></pre>
 
-<body>
-  <script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"; document.body.style.display = "none"; setTimeout(() => app ? app.showPage() : document.body.style.removeProperty("display"), 500)</script>
-  <header class="tsd-page-toolbar">
-    <div class="tsd-toolbar-contents container">
-      <div class="table-cell" id="tsd-search" data-base=".">
-        <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg
-              width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <use href="assets/icons.svg#icon-search"></use>
-            </svg></label><input type="text" id="tsd-search-field" aria-label="Search" /></div>
-        <div class="field">
-          <div id="tsd-toolbar-links"></div>
-        </div>
-        <ul class="results">
-          <li class="state loading">Preparing search index...</li>
-          <li class="state failure">The search index is not available</li>
-        </ul><a href="index.html" class="title">my-flix-angular-client</a>
-      </div>
-      <div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption"
-          data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <use href="assets/icons.svg#icon-menu"></use>
-          </svg></a></div>
-    </div>
-  </header>
-  <div class="container container-main">
-    <div class="col-content">
-      <div class="tsd-page-title">
-        <h1>my-flix-angular-client</h1>
-      </div>
-      <div class="tsd-panel tsd-typography"><a id="md:myflixangularclient" class="tsd-anchor"></a>
-        <h1 class="tsd-anchor-link">MyFlixAngularClient<a href="#md:myflixangularclient" aria-label="Permalink"
-            class="tsd-anchor-icon"><svg viewBox="0 0 24 24">
-              <use href="assets/icons.svg#icon-anchor"></use>
-            </svg></a></h1>
-        <p>This project was generated with <a href="https://github.com/angular/angular-cli" target="_blank"
-            class="external">Angular CLI</a> version 16.0.0.</p>
-        <a id="md:development-server" class="tsd-anchor"></a>
-        <h2 class="tsd-anchor-link">Development server<a href="#md:development-server" aria-label="Permalink"
-            class="tsd-anchor-icon"><svg viewBox="0 0 24 24">
-              <use href="assets/icons.svg#icon-anchor"></use>
-            </svg></a></h2>
-        <p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The application
-          will automatically reload if you change any of the source files.</p>
-        <a id="md:code-scaffolding" class="tsd-anchor"></a>
-        <h2 class="tsd-anchor-link">Code scaffolding<a href="#md:code-scaffolding" aria-label="Permalink"
-            class="tsd-anchor-icon"><svg viewBox="0 0 24 24">
-              <use href="assets/icons.svg#icon-anchor"></use>
-            </svg></a></h2>
-        <p>Run <code>ng generate component component-name</code> to generate a new component. You can also use
-          <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
-        <a id="md:build" class="tsd-anchor"></a>
-        <h2 class="tsd-anchor-link">Build<a href="#md:build" aria-label="Permalink" class="tsd-anchor-icon"><svg
-              viewBox="0 0 24 24">
-              <use href="assets/icons.svg#icon-anchor"></use>
-            </svg></a></h2>
-        <p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code>
-          directory.</p>
-        <a id="md:running-unit-tests" class="tsd-anchor"></a>
-        <h2 class="tsd-anchor-link">Running unit tests<a href="#md:running-unit-tests" aria-label="Permalink"
-            class="tsd-anchor-icon"><svg viewBox="0 0 24 24">
-              <use href="assets/icons.svg#icon-anchor"></use>
-            </svg></a></h2>
-        <p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io"
-            target="_blank" class="external">Karma</a>.</p>
-        <a id="md:running-end-to-end-tests" class="tsd-anchor"></a>
-        <h2 class="tsd-anchor-link">Running end-to-end tests<a href="#md:running-end-to-end-tests"
-            aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24">
-              <use href="assets/icons.svg#icon-anchor"></use>
-            </svg></a></h2>
-        <p>Run <code>ng e2e</code> to execute the end-to-end tests via a platform of your choice. To use this command,
-          you need to first add a package that implements end-to-end testing capabilities.</p>
-        <a id="md:further-help" class="tsd-anchor"></a>
-        <h2 class="tsd-anchor-link">Further help<a href="#md:further-help" aria-label="Permalink"
-            class="tsd-anchor-icon"><svg viewBox="0 0 24 24">
-              <use href="assets/icons.svg#icon-anchor"></use>
-            </svg></a></h2>
-        <p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a
-            href="https://angular.io/cli" target="_blank" class="external">Angular CLI Overview and Command
-            Reference</a> page.</p>
-      </div>
-    </div>
-    <div class="col-sidebar">
-      <div class="page-menu">
-        <div class="tsd-navigation settings">
-          <details class="tsd-accordion">
-            <summary class="tsd-accordion-summary">
-              <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <use href="assets/icons.svg#icon-chevronDown"></use>
-                </svg>Settings</h3>
-            </summary>
-            <div class="tsd-accordion-details">
-              <div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span>
-                <ul id="tsd-filter-options">
-                  <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox"
-                        id="tsd-filter-protected" name="protected" /><svg width="32" height="32" viewBox="0 0 32 32"
-                        aria-hidden="true">
-                        <rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none">
-                        </rect>
-                        <path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25"
-                          stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path>
-                      </svg><span>Protected</span></label></li>
-                  <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox"
-                        id="tsd-filter-inherited" name="inherited" checked /><svg width="32" height="32"
-                        viewBox="0 0 32 32" aria-hidden="true">
-                        <rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none">
-                        </rect>
-                        <path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25"
-                          stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path>
-                      </svg><span>Inherited</span></label></li>
-                  <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox"
-                        id="tsd-filter-external" name="external" /><svg width="32" height="32" viewBox="0 0 32 32"
-                        aria-hidden="true">
-                        <rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none">
-                        </rect>
-                        <path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25"
-                          stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path>
-                      </svg><span>External</span></label></li>
-                </ul>
-              </div>
-              <div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select
-                  id="tsd-theme">
-                  <option value="os">OS</option>
-                  <option value="light">Light</option>
-                  <option value="dark">Dark</option>
-                </select></div>
-            </div>
-          </details>
-        </div>
-        <details open class="tsd-accordion tsd-page-navigation">
-          <summary class="tsd-accordion-summary">
-            <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <use href="assets/icons.svg#icon-chevronDown"></use>
-              </svg>On This Page</h3>
-          </summary>
-          <div class="tsd-accordion-details"><a
-              href="#md:myflixangularclient"><span>My<wbr/>Flix<wbr/>Angular<wbr/>Client</span></a>
-            <ul>
-              <li><a href="#md:development-server"><span>Development server</span></a></li>
-              <li><a href="#md:code-scaffolding"><span>Code scaffolding</span></a></li>
-              <li><a href="#md:build"><span>Build</span></a></li>
-              <li><a href="#md:running-unit-tests"><span>Running unit tests</span></a></li>
-              <li><a href="#md:running-end-to-end-tests"><span>Running end-<wbr/>to-<wbr/>end tests</span></a></li>
-              <li><a href="#md:further-help"><span>Further help</span></a></li>
-            </ul>
-          </div>
-        </details>
-      </div>
-      <div class="site-menu">
-        <nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon"
-              viewBox="0 0 24 24">
-              <use href="assets/icons.svg#icon-1"></use>
-            </svg><span>my-flix-angular-client</span></a>
-          <ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base=".">
-            <li>Loading...</li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
-  <footer>
-    <p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-  </footer>
-  <div class="overlay"></div>
-</body>
+</li>
+<li>
+<p>Install the dependencies:</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span>
+</code><button type="button">Copy</button></pre>
 
-</html>
+</li>
+<li>
+<p>Run the Angular app:</p>
+<pre><code class="bash"><span class="hl-0">ng</span><span class="hl-1"> </span><span class="hl-2">serve</span>
+</code><button type="button">Copy</button></pre>
+
+</li>
+<li>
+<p>Open your browser and navigate to <code>http://localhost:4200/</code>.</p>
+</li>
+</ol>
+<a id="md:api-integration" class="tsd-anchor"></a><h2 class="tsd-anchor-link">API Integration<a href="#md:api-integration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The app interacts with the movie REST API to handle the following operations:</p>
+<ul>
+<li>User registration and login</li>
+<li>Fetching a list of movies</li>
+<li>Retrieving details about a selected movie, director, or genre</li>
+<li>Fetching and updating user data</li>
+</ul>
+<a id="md:documentation" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Documentation<a href="#md:documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li>The app's codebase is fully documented using TypeDoc for easy handoff and collaboration.</li>
+<li>All functions and modules include comments following TypeDoc standards.</li>
+</ul>
+<a id="md:deployment" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Deployment<a href="#md:deployment" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The app is hosted on GitHub Pages for public access. You can view the live demo here: <a href="https://lenachat.github.io/myFlix-Angular-client/" target="_blank" class="external">https://lenachat.github.io/myFlix-Angular-client/</a></p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:myflix-angular-app"><span>my<wbr/>Flix <wbr/>Angular <wbr/>App</span></a><ul><li><a href="#md:features"><span>Features</span></a></li><li><a href="#md:technologies-used"><span>Technologies <wbr/>Used</span></a></li><li><a href="#md:key-views"><span>Key <wbr/>Views</span></a></li><li><a href="#md:installation"><span>Installation</span></a></li><li><a href="#md:api-integration"><span>API <wbr/>Integration</span></a></li><li><a href="#md:documentation"><span>Documentation</span></a></li><li><a href="#md:deployment"><span>Deployment</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>my-flix-angular-client</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
