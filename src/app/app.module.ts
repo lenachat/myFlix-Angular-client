@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
@@ -39,37 +39,30 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },  //default page
 ];
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    UserRegistrationFormComponent,
-    UserLoginFormComponent,
-    MovieCardComponent,
-    WelcomePageComponent,
-    MovieDetailsComponent,
-    UserProfileComponent,
-    EditProfileFormComponent,
-    DirectorDetailsComponent,
-    GenreDetailsComponent
-  ],
-  imports: [
-    RouterModule.forRoot(appRoutes, {useHash: true}),
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatIconModule,
-    MatToolbarModule,
-    FlexLayoutModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        UserRegistrationFormComponent,
+        UserLoginFormComponent,
+        MovieCardComponent,
+        WelcomePageComponent,
+        MovieDetailsComponent,
+        UserProfileComponent,
+        EditProfileFormComponent,
+        DirectorDetailsComponent,
+        GenreDetailsComponent
+    ],
+    bootstrap: [AppComponent], imports: [RouterModule.forRoot(appRoutes, { useHash: true }),
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        MatIconModule,
+        MatToolbarModule,
+        FlexLayoutModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
