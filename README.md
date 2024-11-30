@@ -2,7 +2,7 @@
 
 myFlix is a single-page, responsive movie app built with Angular. The app allows users to access information about different movies, directors, and genres, and to create a profile to save their favorite movies. This project serves as the client-side for the myFlix app. It interacts with an existing REST API to handle user requests (see movie_api on GitHub: https://github.com/lenachat/movie_api).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
 
 ## Features
 
