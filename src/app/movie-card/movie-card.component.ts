@@ -10,7 +10,8 @@ import { GenreDetailsComponent } from '../genre-details/genre-details.component'
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.scss']
+  styleUrls: ['./movie-card.component.scss'],
+  standalone: false
 })
 export class MovieCardComponent implements OnInit {
 

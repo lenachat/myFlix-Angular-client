@@ -9,9 +9,10 @@ import { DirectorDetailsComponent } from '../director-details/director-details.c
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
+    selector: 'app-user-profile',
+    templateUrl: './user-profile.component.html',
+    styleUrls: ['./user-profile.component.scss'],
+    standalone: false
 })
 export class UserProfileComponent implements OnInit {
   user: any = {}; // Object to store user data

@@ -3,9 +3,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 
 @Component({
-  selector: 'app-edit-profile-form',
-  templateUrl: './edit-profile-form.component.html',
-  styleUrls: ['./edit-profile-form.component.scss']
+    selector: 'app-edit-profile-form',
+    templateUrl: './edit-profile-form.component.html',
+    styleUrls: ['./edit-profile-form.component.scss'],
+    standalone: false
 })
 export class EditProfileFormComponent {
 
